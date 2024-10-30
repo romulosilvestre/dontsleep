@@ -1,6 +1,7 @@
 # Códigos essenciais
 import cv2
 
+
 cap = cv2.VideoCapture(0)
 # while cap.isOpened() - enquanto a camera estiver aberta o while continuara rodando
 while cap.isOpened():
