@@ -15,7 +15,7 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5, min_tracking_confidence
         # frame - captura
         sucesso, frame = cap.read()
         # realizar a verificação
-        # sucesso = 1   fracaso = 0
+        # sucesso = 1   fracasso = 0
         if not sucesso:
             print("ignorando o frame vazio da camêra")
             continue
@@ -26,7 +26,7 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5, min_tracking_confidence
         # O OpenCV - entende BGR
         frame = cv2.cvtColor(frame,cv2.COLOR_RGB2BGR)
         
-        # O try tira o erro do usuário sair de frente da camera e dar errado
+        # O try - tratando o erro de ausência de usuário em frente a camera
         try: 
             #mostrar os pontos, mostrar a detecção que o MediaPipe fez
             # vou criar uma variável face_landmarks - que são as coordenadas da nossa face
@@ -48,16 +48,15 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5, min_tracking_confidence
             print("encerrando o processo")    
         # carregar nosso frame - com título
         cv2.imshow('Camera',frame)
-        # bitwise - tabela ASC II
-        # 10 milissegundos
+        # Estude sobre bitwise
+        # Estude sobre tabela ASC II estendida
         # ord() - retorna o valor Unicode (ou ASC II)
         # o valor 0xFF é tabela ASC II estendida
-        # c - 0xFF
-        # C - ?
-        if cv2.waitKey(10) & 0xFF == ord('c'):
+       
+        if cv2.waitKey(10) & 0xFF in [ord('c'), ord('C')]:
             break
-# fechando a captura
+# Libera o recurso de captura de vídeo 
 cap.release()
-# fechando todas janelas
+# Esse método fecha todas as janelas abertas pelo OpenCV.
 cv2.destroyAllWindows()
 
