@@ -41,7 +41,14 @@ with mp_face_mesh.FaceMesh(min_detection_confidence=0.5, min_tracking_confidence
                 # o nosso (frame)
                 # as coordenadas - (face_landmarks)
                 # Especificar os nossos pontos : FACEMESH_CONTOURS
-                mp_drawing.draw_landmarks(frame,face_landmarks,mp_face_mesh.FACEMESH_CONTOURS)
+                # tickness = grossura
+                mp_drawing.draw_landmarks(frame, 
+                                       face_landmarks, 
+                                       mp_face_mesh.FACEMESH_CONTOURS,
+                                       landmark_drawing_spec = mp_drawing.DrawingSpec(color=(255,102,102),thickness=1,circle_radius=1),
+                                       connection_drawing_spec = mp_drawing.DrawingSpec(color=(102,204,0),thickness=1,circle_radius=1)) 
+                
+
         except:
             print("algo deu errado")
         finally:
