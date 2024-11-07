@@ -1,3 +1,9 @@
+# Objetivo da Aula 2
+
+# Resolver o problema quando a pessoa não esta em frente a camera
+
+
+
 # Códigos essenciais
 import cv2
 # a2 - importação - passo 1

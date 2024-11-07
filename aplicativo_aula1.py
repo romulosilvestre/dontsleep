@@ -1,3 +1,8 @@
+# Objetivo da Aula 1
+
+# Capturar a camera com OpenCV
+
+
 # Códigos essenciais
 import cv2
 

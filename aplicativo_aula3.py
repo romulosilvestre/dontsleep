@@ -1,3 +1,10 @@
+# Objetivos
+
+# MediaPipe e FaceMesh
+# Conversão de BGR para RGB
+# Detecção dos pontos 
+
+
 #importação do opencv-python
 import cv2
 import mediapipe as mp # importação do mediapipe para usar o facemesh
